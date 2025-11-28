@@ -1,6 +1,6 @@
 # **obs-clip**
 
-[🇧🇷 Português](#português-brasil) · [🇺🇸 English](#english)
+[🇧🇷 Português](#user-content-pt-br) · [🇺🇸 English](#user-content-en)
 
 <p align="left">
   <img src="https://img.shields.io/badge/Rust-stable-orange?style=for-the-badge" />
@@ -18,7 +18,7 @@ Designed mainly to provide reliable clip creation on **Wayland**, where OBS nati
 
 ---
 
-# 🇧🇷 Português (Brasil)
+# 🇧🇷 Português (Brasil) <a id="pt-br"></a>
 
 ## 📦 Instalação
 
@@ -107,7 +107,7 @@ Depois de adicioná-lo aos atalhos globais do KDE, meu problema foi completament
 
 ---
 
-# 🇺🇸 English
+# 🇺🇸 English <a id="en"></a>
 
 ## 📦 Installation
 
