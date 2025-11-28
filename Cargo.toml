@@ -1,0 +1,10 @@
+[package]
+name = "obs_replay_rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+obws = "0.14.0" # Use the latest version available
+tokio = { version = "1.x", features = ["full"] } # Required for async operations
+anyhow = "1.x" # For simplified error handling
+dotenv = "0.15.0"
