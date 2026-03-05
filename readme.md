@@ -47,7 +47,7 @@ Copie para uma pasta acessível no PATH (ex.: `~/.local/bin`):
 
 ```
 mkdir -p ~/.local/bin
-cp target/release/obs-clip ~/.local/bin/
+cp target/release/obs_replay_rs ~/.local/bin/
 ```
 
 ---
