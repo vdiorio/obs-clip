@@ -1,32 +1,28 @@
 use anyhow::Result;
 use obws::Client;
-use std::env;
-use dotenv::dotenv;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    dotenv().ok();
 
-    // Recupera valores do .env com defaults
-    let password = env::var("OBS_PASSWORD")?;
-    let host = env::var("OBS_HOST").unwrap_or_else(|_| "localhost".to_string());
-    let port: u16 = env::var("OBS_PORT")
-        .unwrap_or_else(|_| "4455".to_string())
-        .parse()
-        .expect("OBS_PORT must be a number");
+    // CONFIGURAÇÃO MANUAL
+    let password = "SUA_SENHA_OBS";
+    let host = "localhost";
+    let port: u16 = 4455;
 
     // Conectar ao OBS
     let client = Client::connect(host, port, Some(password)).await?;
 
-    // Obter status do Replay Buffer
+    // Verificar status do Replay Buffer
     let is_buffer_on = client.replay_buffer().status().await?;
 
     if is_buffer_on {
-        // Replay Buffer já está ativo → salva clipe
+        // Replay já ativo → salva clip
         client.replay_buffer().save().await?;
+        println!("Replay salvo!");
     } else {
-        // Replay Buffer desligado → liga
+        // Replay desligado → inicia
         client.replay_buffer().start().await?;
+        println!("Replay buffer iniciado!");
     }
 
     Ok(())
